@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Individual.Applets.Api.ResponseModel</RootNamespace>
+    <AssemblyName>Individual.Applets.Api.ResponseModel</AssemblyName>
+  </PropertyGroup>
+
+</Project>

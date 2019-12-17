@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Individual.WeChat.Applets.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Individual.WeChat.Applets.Api.Controllers.BaseApiController">
+            <summary>
+            所有控制器基类，不包括[UserAuthTokenController]控制器
+            验证当前用户的权限信息
+            </summary>
+        </member>
+        <member name="T:Individual.WeChat.Applets.Api.Controllers.UserAuthTokenController">
+            <summary>
+            令牌Token认证
+            </summary>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.Controllers.UserAuthTokenController.FindGetAuthUserToken(Individual.Applets.ViewModel.UserAuthToken.LoginGetAuthUserTokenReceive)">
+            <summary>
+            登录并注册用户，返回Token
+            </summary>
+            <param name="wxOpenId">微信Id</param>
+            <returns>请求Token</returns>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.Controllers.UserController.#ctor(MediatR.IMediator,Microsoft.Extensions.Options.IOptionsMonitor{WeChat.Developers.WxOpen.BaseReceiveParame})">
+            <summary>
+            构造函数 依赖注入
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.Controllers.UserController.FindGetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+        </member>
+        <member name="T:Individual.WeChat.Applets.Api.AuthenticationFliterConfig">
+            <summary>
+            身份验证过滤器
+            </summary>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.AuthenticationFliterConfig.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            验证身份
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Individual.WeChat.Applets.Api.SystemFilter.ExceptionFilterConfig">
+            <summary>
+            全局异常过滤器
+            </summary>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.SystemFilter.ExceptionFilterConfig.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            发生异常时进入
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.SystemFilter.ExceptionFilterConfig.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            异步发生异常时进入
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Individual.WeChat.Applets.Api.SystemFilter.ResponseResultConfig">
+            <summary>
+            返回结果过滤器
+            </summary>
+        </member>
+        <member name="F:Individual.WeChat.Applets.Api.SystemFilter.ResponseResultConfig.watch">
+            <summary>
+            请求时长计时开始
+            </summary>
+        </member>
+        <member name="M:Individual.WeChat.Applets.Api.SystemFilter.ResponseResultConfig.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            返回结果之前执行
+            重新序列化返回的结果格式 基于BaseResponse 参数进行返回
+            为了保证参数不返回不必要的参数，次数使用匿名数组 抽象与BaseResponse
+            </summary>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>
