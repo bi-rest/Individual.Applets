@@ -14,6 +14,7 @@ namespace Individual.Applets.Service
         /// <param name="_unitofWork"></param>
         public UserService(AppUnitofWork _unitofWork) : base(_unitofWork) { }
 
+
         public void FindAddUser()
         {
             
